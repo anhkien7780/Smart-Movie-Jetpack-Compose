@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Smart Movie</string>
+    <string name="smart_movie">Smart Movie</string>
+    <string name="movies">Movies</string>
+    <string name="genres">Genres</string>
+    <string name="favorite">Favorite</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="see_all">See All</string>
+    <string name="reload">Reload</string>
+    <string name="retry">Retry</string>
+    <string name="movie_detail">Movie Detail</string>
+    <string name="cancel">Cancel</string>
+    <string name="cast">Cast</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="view_all">view all</string>
+    <string name="language">Language: %1$s</string>
+    <string name="rating_format">%1$.1f / 10</string>
+    <string name="search">Search</string>
+    <string name="search_movie">Search movie...</string>
+    <string name="search_genre">Search genre...</string>
+    <string name="no_results">No results found</string>
+    <string name="runtime_format">%1$dh %2$dm</string>
+    <string name="error_unknown">An unknown error occurred</string>
+</resources>
