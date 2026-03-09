@@ -41,6 +41,10 @@ android {
 }
 
 dependencies {
+    // Splash Screen
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.lottie.compose)
+
     //Room
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
