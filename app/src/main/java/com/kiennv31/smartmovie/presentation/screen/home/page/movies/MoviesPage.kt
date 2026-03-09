@@ -21,7 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import com.kiennv31.smartmovie.R
+import com.kiennv31.smartmovie.core.ui.theme.SmartMovieTheme
 import com.kiennv31.smartmovie.domain.model.Movie
 import com.kiennv31.smartmovie.presentation.common.BaseLoadingOverlay
 import com.kiennv31.smartmovie.presentation.common.MovieItem
@@ -247,5 +249,36 @@ private fun SectionBody(
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun MoviesPagePreview() {
+    val sampleMovie = Movie(
+        id = 1,
+        title = "Inception",
+        isFavorite = false,
+        posterPath = "https://example.com/poster.jpg",
+        overview = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        voteAverage = 8.8
+    )
+    val sampleMovies = List(4) { sampleMovie.copy(id = it, title = "Movie $it") }
+    val state = MoviesPageState(
+        popular = sampleMovies,
+        topRated = sampleMovies,
+        upcoming = sampleMovies,
+        nowPlaying = sampleMovies
+    )
+    SmartMovieTheme {
+        MoviesPageContent(
+            modifier = Modifier,
+            state = state,
+            isGridView = true,
+            onReloadClick = {},
+            onSeeAllClick = {},
+            onFavoriteClick = {},
+            onMovieClick = {}
+        )
     }
 }

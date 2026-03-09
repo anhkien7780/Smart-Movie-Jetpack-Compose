@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
@@ -39,10 +38,10 @@ import com.kiennv31.smartmovie.domain.model.MovieDetail
 import com.kiennv31.smartmovie.domain.model.MovieGenre
 import com.kiennv31.smartmovie.presentation.common.BaseAppBar
 import com.kiennv31.smartmovie.presentation.common.BaseLoadingOverlay
-import com.kiennv31.smartmovie.presentation.screen.detail.common.CastMemberItem
+import com.kiennv31.smartmovie.presentation.screen.detail.common.CastTab
 import com.kiennv31.smartmovie.presentation.screen.detail.common.MovieHeaderSection
 import com.kiennv31.smartmovie.presentation.screen.detail.common.OverviewSection
-import com.kiennv31.smartmovie.presentation.screen.detail.common.SimilarMovieItem
+import com.kiennv31.smartmovie.presentation.screen.detail.common.SimilarMovieTab
 
 @Composable
 fun MovieDetailScreen(
@@ -154,21 +153,16 @@ fun MovieDetailContent(
 
         when (selectedTabIndex) {
             0 -> {
-                items(cast) { member ->
-                    CastMemberItem(member)
+                item(span = { GridItemSpan(maxLineSpan) }) {
+                    CastTab(cast = cast)
                 }
             }
 
             1 -> {
-                items(
-                    items = similarMovies,
-                    span = { GridItemSpan(maxLineSpan) }
-                ) { movie ->
-                    SimilarMovieItem(
-                        movie = movie,
-                        onClick = { onMovieClick(movie.id) }
-                    )
-                }
+                SimilarMovieTab(
+                    similarMovies = similarMovies,
+                    onMovieClick = onMovieClick
+                )
             }
         }
     }

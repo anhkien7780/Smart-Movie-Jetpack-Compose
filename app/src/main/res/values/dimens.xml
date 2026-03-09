@@ -13,4 +13,6 @@
     <dimen name="radius_medium">8dp</dimen>
     <dimen name="genre_item_height">180dp</dimen>
     <dimen name="text_size_large">24sp</dimen>
+    <dimen name="cast_item_width">120dp</dimen>
+    <dimen name="cast_grid_height">320dp</dimen>
 </resources>

@@ -19,10 +19,13 @@ import com.kiennv31.smartmovie.R
 import com.kiennv31.smartmovie.domain.model.Cast
 
 @Composable
-fun CastMemberItem(cast: Cast) {
+fun CastMemberItem(
+    cast: Cast,
+    modifier: Modifier = Modifier
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
         AsyncImage(
             model = cast.profilePath,
@@ -31,7 +34,7 @@ fun CastMemberItem(cast: Cast) {
                 .fillMaxWidth()
                 .aspectRatio(1f)
                 .clip(RoundedCornerShape(dimensionResource(id = R.dimen.radius_small))),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.FillWidth
         )
         Text(
             text = cast.name,
